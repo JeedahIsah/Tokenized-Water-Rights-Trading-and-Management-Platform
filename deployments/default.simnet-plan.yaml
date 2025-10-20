@@ -45,41 +45,53 @@ genesis:
       balance: "100000000000000"
       sbtc-balance: "1000000000"
   contracts:
-    - genesis
-    - lockup
-    - bns
-    - cost-voting
     - costs
     - pox
-    - costs-2
     - pox-2
-    - costs-3
     - pox-3
     - pox-4
-    - signers
-    - signers-voting
+    - lockup
+    - costs-2
+    - costs-3
+    - cost-voting
+    - bns
 plan:
   batches:
     - id: 0
       transactions:
         - emulated-contract-publish:
+            contract-name: compliance
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: "contracts\\compliance.clar"
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: governance-dao
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: "contracts\\governance-dao.clar"
+            clarity-version: 3
+        - emulated-contract-publish:
             contract-name: marketplace
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/marketplace.clar
+            path: "contracts\\marketplace.clar"
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: reputation-nft
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: "contracts\\reputation-nft.clar"
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: usage-reporting
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/usage-reporting.clar
+            path: "contracts\\usage-reporting.clar"
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: water-rights-registry
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/water-rights-registry.clar
+            path: "contracts\\water-rights-registry.clar"
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: water-rights-token
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/water-rights-token.clar
+            path: "contracts\\water-rights-token.clar"
             clarity-version: 3
       epoch: "3.2"
